@@ -13,7 +13,7 @@ class ToDo extends Component {
     super(props);
     this.latestNotificationTimeoutId = undefined;
     this.currentPage = 0;
-    this.counter = 0;
+    this.counter = localStorage.getItem('counter') || 0;
     this.state = {
       latestNotificationMessage: '',
       byIdMap:
@@ -42,6 +42,7 @@ class ToDo extends Component {
       };
       byIdMap.set(toDoItemId, toDoItemObject);
       localStorage.setItem('byIdMap', JSON.stringify([...byIdMap.entries()]));
+      localStorage.setItem('counter', this.counter);
       return {
         byIdMap: byIdMap,
         latestNotificationMessage: `Added ToDo: ${toDoItemName}`
