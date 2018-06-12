@@ -14,13 +14,13 @@ class ToDo extends Component {
     this.latestNotificationTimeoutId = undefined;
     this.currentPage = 0;
     this.counter = 0;
+    this.state = {
+      latestNotificationMessage: '',
+      byIdMap:
+        new Map(JSON.parse(localStorage.getItem('byIdMap'))) || new Map(),
+      currentPage: 0
+    };
   }
-
-  state = {
-    latestNotificationMessage: '',
-    byIdMap: new Map(),
-    currentPage: 0
-  };
 
   handleEnterToAddToDo = event => {
     if (event.key !== 'Enter') {
@@ -41,6 +41,7 @@ class ToDo extends Component {
         itemName: toDoItemName
       };
       byIdMap.set(toDoItemId, toDoItemObject);
+      localStorage.setItem('byIdMap', JSON.stringify([...byIdMap.entries()]));
       return {
         byIdMap: byIdMap,
         latestNotificationMessage: `Added ToDo: ${toDoItemName}`
@@ -71,6 +72,7 @@ class ToDo extends Component {
         newCurrentPage = currentPage - 1;
       }
       byIdMap.delete(toDoItemId);
+      localStorage.setItem('byIdMap', JSON.stringify([...byIdMap.entries()]));
       return {
         latestNotificationMessage: `Removed ToDo: ${deletedToDoItemName}`,
         byIdMap: byIdMap,
@@ -84,6 +86,7 @@ class ToDo extends Component {
     this.setState(({ byIdMap }) => {
       const toDoToUpdate = byIdMap.get(toDoItemId);
       toDoToUpdate.done = !toDoToUpdate.done;
+      localStorage.setItem('byIdMap', JSON.stringify([...byIdMap.entries()]));
       return {
         byIdMap: byIdMap
       };
