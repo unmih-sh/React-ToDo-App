@@ -117,6 +117,10 @@ body {
   height: 25px;
 }
 
+.iconsDisabled {
+  opacity: 0.3;
+}
+
 .emptyPage {
   display: flex;
   color: gray;

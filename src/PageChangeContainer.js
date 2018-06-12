@@ -13,7 +13,7 @@ class PageChangeContainer extends PureComponent {
       <div className="prevAndNextButtons">
         <div className="prevButtonDiv">
           <img
-            className="icons"
+            className={isPreviousDisabled ? 'icons iconsDisabled' : 'icons'}
             src="https://image.flaticon.com/icons/svg/118/118739.svg"
             onClick={setToPreviousPage}
             alt=""
@@ -21,7 +21,7 @@ class PageChangeContainer extends PureComponent {
         </div>
         <div className="nextButtonDiv">
           <img
-            className="icons"
+            className={isNextDisabled ? 'icons iconsDisabled' : 'icons'}
             src="https://image.flaticon.com/icons/svg/118/118740.svg"
             onClick={setToNextPage}
             alt=""
