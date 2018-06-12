@@ -1,0 +1,126 @@
+body {
+  background-color: #ffc600;
+}
+
+.addToDoContainer {
+  max-width: 50%;
+  display: flex;
+  margin: 50px auto;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.addToDoContainer input {
+  flex: 1;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+.addToDoContainer button {
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.notification {
+  color: #000000;
+  max-width: 70%;
+  margin: 0px auto;
+  border-radius: 5px;
+  display: flex;
+  font-size: 24px;
+}
+
+.notification p {
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+.toDoContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.toDoItemContainer {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  border-radius: 5px;
+}
+
+.toDoItemContainer:last-child {
+  border-bottom: 0px;
+}
+
+.toDoItemContainer input {
+  margin: 10px;
+}
+
+.toDoItemContainer span {
+  padding-right: 10px;
+  padding-left: 10px;
+  flex: 1;
+  border-left: 1px solid #d1e2ff;
+  border-right: 1px solid #d1e2ff;
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+.toDoItemContainer button {
+  margin: 10px;
+  border: none;
+  transition: all 0.25s;
+  color: gray;
+}
+
+.toDoItemContainer button:hover {
+  color: black;
+  transform: scale(1.5);
+}
+
+.toDoItemDone {
+  background-color: #f9f9f9;
+  text-decoration: line-through;
+  color: #696969;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prevAndNextButtons {
+  max-width: 70%;
+  margin: 10px auto;
+  display: flex;
+}
+
+.prevButtonDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.nextButtonDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.icons {
+  width: 25px;
+  height: 25px;
+}
+
+.emptyPage {
+  display: flex;
+  color: gray;
+  justify-content: center;
+  padding: 10px;
+  font-size: 24px;
+}
