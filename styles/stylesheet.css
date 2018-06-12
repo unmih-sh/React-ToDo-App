@@ -14,11 +14,7 @@ body {
   flex: 1;
   border-radius: 5px;
   font-size: 25px;
-}
-
-.addToDoContainer button {
-  border-radius: 5px;
-  font-size: 20px;
+  text-align: center;
 }
 
 .notification {
