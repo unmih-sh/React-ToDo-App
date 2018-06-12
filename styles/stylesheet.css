@@ -61,8 +61,7 @@ body {
 }
 
 .toDoItemContainer span {
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 10px;
   flex: 1;
   border-left: 1px solid #d1e2ff;
   border-right: 1px solid #d1e2ff;
@@ -100,21 +99,30 @@ body {
   display: flex;
 }
 
-.prevButtonDiv {
+.numberPane {
   flex: 1;
   display: flex;
-  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.nextButtonDiv {
+.numberPaneItems {
   flex: 1;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+
+.numberPaneItemActive {
+  color: black;
 }
 
 .icons {
   width: 25px;
   height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .iconsDisabled {

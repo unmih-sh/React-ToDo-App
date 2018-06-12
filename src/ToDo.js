@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Notification from './Notification';
-import EmptyPage from './EmptyPage';
 import Page from './Page';
 import Greeter from './Greeter';
 import AddToDoContainer from './AddToDoContainer';
-
 import '../styles/stylesheet.css';
 
 const PAGE_SIZE = 5;
@@ -21,13 +19,6 @@ class ToDo extends Component {
       currentPage: 0
     };
   }
-
-  handleEnterToAddToDo = event => {
-    if (event.key !== 'Enter') {
-      return;
-    }
-    this.addToDo(this.inputToDoNode.value);
-  };
 
   addToDo = toDoItemName => {
     if (toDoItemName === '') {
@@ -117,6 +108,10 @@ class ToDo extends Component {
     });
   };
 
+  goToAnyPage = pageNumber => {
+    this.setState({ currentPage: pageNumber });
+  };
+
   render() {
     const { byIdMap, latestNotificationMessage, currentPage } = this.state;
     const totalItems = byIdMap.size;
@@ -142,6 +137,9 @@ class ToDo extends Component {
           isNextDisabled={isNextDisabled}
           setToNextPage={this.setToNextPage}
           setToPreviousPage={this.setToPreviousPage}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          goToAnyPage={this.goToAnyPage}
         />
         <Notification latestNotificationMessage={latestNotificationMessage} />
       </div>

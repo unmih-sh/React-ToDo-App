@@ -14,7 +14,10 @@ class Page extends Component {
       isNextDisabled,
       setToNextPage,
       setToPreviousPage,
-      pageItems
+      pageItems,
+      currentPage,
+      totalPages,
+      goToAnyPage
     } = this.props;
     const pageContent = isEmpty ? (
       <div className="emptyPage">
@@ -56,6 +59,9 @@ class Page extends Component {
           isNextDisabled={isNextDisabled}
           setToNextPage={setToNextPage}
           setToPreviousPage={setToPreviousPage}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          goToAnyPage={goToAnyPage}
         />
       );
     }
