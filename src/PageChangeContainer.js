@@ -49,7 +49,7 @@ class PageChangeContainer extends PureComponent {
               }
               onClick={() => goToAnyPage(pageNumber - 1)}
             >
-              {pageNumber}
+              <span>{pageNumber}</span>
             </div>
           ))}
         </div>
